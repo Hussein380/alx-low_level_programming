@@ -1,0 +1,56 @@
+>
+sitive_or_negative.c:20:3: error: implicit declaration of function ‘printf’ [-Werror=implicit-function-declaration]
+   20 |   printf("%d is positive", n);
+      |   ^~~~~~
+0-positive_or_negative.c:20:3: error: incompatible implicit declaration of built-in function ‘printf’ [-Werror]
+0-positive_or_negative.c:3:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+    2 | #include <time.h>
+  +++ |+#include <stdio.h>
+    3 | /* more headers goes there */
+0-positive_or_negative.c:24:3: error: incompatible implicit declaration of built-in function ‘printf’ [-Werror]
+   24 |   printf("%d is zero", n);
+      |   ^~~~~~
+0-positive_or_negative.c:24:3: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+0-positive_or_negative.c:28:3: error: incompatible implicit declaration of built-in function ‘printf’ [-Werror]
+   28 |   printf("%d is negative", n)
+      |   ^~~~~~
+0-positive_or_negative.c:28:3: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+0-positive_or_negative.c:28:30: error: expected ‘;’ before ‘}’ token
+   28 |   printf("%d is negative", n)
+      |                              ^
+      |                              ;
+   29 |  }
+      |  ~                            
+0-positive_or_negative.c:30:4: error: expected declaration or statement at end of input
+   30 |    return (0);
+      |    ^~~~~~
+cc1: all warnings being treated as errors
+r>oot@300b70904399:/alx-low_level_programming/0x01-variables_if_else_while#  
+sitive_or_negative.c:20:3: error: implicit declaration of function ‘printf’ [-Werror=implicit-function-declaration]
+   20 |   printf("%d is positive", n);
+      |   ^~~~~~
+0-positive_or_negative.c:20:3: error: incompatible implicit declaration of built-in function ‘printf’ [-Werror]
+0-positive_or_negative.c:3:1: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+    2 | #include <time.h>
+  +++ |+#include <stdio.h>
+    3 | /* more headers goes there */
+0-positive_or_negative.c:24:3: error: incompatible implicit declaration of built-in function ‘printf’ [-Werror]
+   24 |   printf("%d is zero", n);
+      |   ^~~~~~
+0-positive_or_negative.c:24:3: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+0-positive_or_negative.c:28:3: error: incompatible implicit declaration of built-in function ‘printf’ [-Werror]
+   28 |   printf("%d is negative", n)
+      |   ^~~~~~
+0-positive_or_negative.c:28:3: note: include ‘<stdio.h>’ or provide a declaration of ‘printf’
+0-positive_or_negative.c:28:30: error: expected ‘;’ before ‘}’ token
+   28 |   printf("%d is negative", n)
+      |                              ^
+      |                              ;
+   29 |  }
+      |  ~                            
+0-positive_or_negative.c:30:4: error: expected declaration or statement at end of input
+   30 |    return (0);
+      |    ^~~~~~
+cc1: all warnings being treated as errors
+root@300b70904399:/alx-low_level_programming/0x01-variables_if_else_while#  
+
