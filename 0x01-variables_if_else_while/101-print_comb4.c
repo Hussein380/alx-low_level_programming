@@ -2,6 +2,7 @@
 /**
  * main - entry point for the programme
  *
+ * Return: returns 0 when successfull
  */
 int main(void)
 {
