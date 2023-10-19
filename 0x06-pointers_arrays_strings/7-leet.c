@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * leet - changes letter into a number
+ * leet - changes letters into numbers
  * @c: input string
  *
- * @return: A pointer to encoded string
+ * Return: a pointers to the encoded string
  */
 char *leet(char *c)
 {
