@@ -1,0 +1,2 @@
+trdup.c:10: warning: Excess function parameter 'Return' description in '_strdup'
+1-strdup.c:9: warning: No description fo
