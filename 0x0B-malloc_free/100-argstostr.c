@@ -4,7 +4,7 @@
  * argstostr - concatenates all the argument of your programme
  * @ac: argument count
  * @av: argument elements
- * Return: null if ac ==0 \\av
+ * Return: null if ac ==0  ||av == 0
  */
 char *argstostr(int ac, char **av)
 {
@@ -12,6 +12,10 @@ char *argstostr(int ac, char **av)
 	int count = 0;
 	char *output;
 
+	if (ac == 0 || av == NULL)
+	{
+		return (NULL);
+	}
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
