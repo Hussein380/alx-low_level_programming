@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
+#include <ctype.h>
 /**
  * main - adds positive num * main - prints prime num
  * @argc: argument counts
@@ -9,33 +9,28 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, num;
+	int i, j;
 	int sum = 0;
-	bool hasError = false;
 
 	if (argc == 1)
 	{
-		printf("0\n");
-		return (0);
-	}
-	for (i = 1; i < argc; i++)
-	{
-		num = atoi(argv[i]);
-		if (num <= 0)
-		{
-			hasError = true;
-			break;
-		}
-		sum += num;
-	}
-	if (hasError)
-	{
-		printf("Error\n");
-		return (1);
+		printf("%d\n", 0);
 	}
 	else
 	{
+		for (i = 1; i < argc; i++)
+		{
+			for (j = 0; argv[i][j] != '\0'; j++)
+			{
+				if (!(isdigit(argv[i][j])))
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
+			sum += atoi(argv[i]);
+		}
 		printf("%d\n", sum);
-		return (0);
 	}
+	return (0);
 }
