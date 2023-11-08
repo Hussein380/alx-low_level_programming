@@ -40,7 +40,7 @@ char *_strcpy(char *dest, char *src)
  * @owner: owner of dog
  * Return: newdog
  */
-dog_t *new_dog(char *name, float age, char *owner)
+ndog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *ndog;
 	int len1, len2;
@@ -69,3 +69,4 @@ dog_t *new_dog(char *name, float age, char *owner)
 	ndog->age = age;
 	return (ndog);
 }
+
