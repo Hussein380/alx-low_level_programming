@@ -11,7 +11,6 @@ size_t print_list(const list_t *h)
 {
 	/* sets new to point the head*/
 	const list_t *new = h;
-	new =malloc(sizeof(list_t);
 	size_t count = 0;
 
 	while (new != NULL)
