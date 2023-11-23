@@ -2,6 +2,8 @@
 /**
  * get_nodeint_at_index - function that returns nth node of a list
  * @head: pointer head of the list
+ * deint.c::
+ *
  * @index: index of value  needed to return
  * Return: pointer to the nth node or null if it dont exist
  */
