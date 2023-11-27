@@ -8,7 +8,7 @@
 /**
  *  read_textfile - reads a text of file and prints its output in stdout
  *  @filename: name of the file
- *  @letters: letter in the file
+ *  @letters: number of letters it should print and read
  *  Return: returns number of characters the file contain
  */
 
@@ -26,7 +26,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	file_descriptor = open(filename, O_RDONLY);
 	if (file_descriptor == -1)
 	{
-		perror("Error in opening the file\n");
 		return (0);
 	}
 
@@ -35,7 +34,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	bytesRead = read(file_descriptor, buffer, letters);
 	if (bytesRead == -1)
 	{
-		perror("Error in reading the file into the buffe\n");
+
 		close(file_descriptor);
 		return (0);
 	}
@@ -46,7 +45,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	bytesWrite = write(STDOUT_FILENO, buffer, bytesRead);
 	if (bytesWrite != bytesRead)
 	{
-		perror("Error in writing to STDOUT\n");
 		return (0);
 	}
 	return (bytesRead);
