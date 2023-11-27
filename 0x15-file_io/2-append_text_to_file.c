@@ -21,7 +21,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		return (-1);
 	/* checks if file_content is null*/
 	if (text_content == NULL)
-		return (-1);
+		return (1);
 
 	/*open the file in append mode*/
 	file_descriptor = open(filename, O_WRONLY | O_APPEND);
