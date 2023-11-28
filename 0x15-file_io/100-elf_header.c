@@ -1,19 +1,19 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <elf.h>
-void (display_erroret const char *messages)
+
+void display_error(const char *message)
 {
-	fprintf(stderr, "%s\n", messages);
-	exit(98);
+	perror(message);
+	_exit(1);
 }
 
 void display_elf_elf_header(const char *filename)
 {
 
 	int fd;
-	Elf64_ehdr elf_header;
+	Elf64_Ehdr elf_header;
 
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
@@ -26,15 +26,16 @@ void display_elf_elf_header(const char *filename)
 	}
 	/*Display  the required information*/
 	printf("Magic: %02x %02x %02x %02x\n",
-			elf_header.e_ident[EI_MAGO], elf_header.e_ident[EI_MAGI],
-			elf_header.e_ident[EI_MAGI]);
+			(unsigned int)elf_header.e_ident[EI_MAG0], (unsigned int)elf_header.e_ident[EI_MAG1],
+			(unsigned int)elf_header.e_ident[EI_MAG2],
+			(unsigned int)elf_header.e_ident[EI_MAG3]);
 	printf("Class: %d\n", elf_header.e_ident[EI_CLASS]);
 	printf("Data: %d\n ", elf_header.e_ident[EI_DATA]);
 	printf("Version: %d\n", elf_header.e_ident[EI_VERSION]);
 	printf("OS/ABI: %d\n", elf_header.e_ident[EI_OSABI]);
 	printf("ABI Version: %d\n", elf_header.e_ident[EI_ABIVERSION]);
 	printf("Type: %d\n", elf_header.e_type);
-	printf("Entry point address: %lx\n", elf_header.e_entry);
+	printf("Entry point address: %lx\n", (unsigned long)elf_header.e_entry);
 
 	close(fd);
 }
@@ -44,6 +45,6 @@ int main(int argc, char *argv[])
 	{
 		display_error("usage: elf_header elf_filename");
 	}
-	display_elf_header(argv[1]);
+	display_elf_elf_header(argv[1]);
 	return (0);
 }
