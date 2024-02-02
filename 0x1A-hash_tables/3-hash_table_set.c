@@ -15,7 +15,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t  *new_node, *temp;
 	unsigned long int index;
 
-	/*check for NULL hash _table or empty key*/
 	if (ht == NULL || key == NULL || *key == '\0')
 		return (0);
 	/*Get the index using the key inex function*/
@@ -26,7 +25,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(temp->key, key) == 0)
 		{
-			/*update the value and return*/
 			free(temp->value);
 			temp->value = strdup(value);
 			if (temp->value == NULL)
