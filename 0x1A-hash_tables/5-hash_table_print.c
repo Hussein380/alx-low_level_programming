@@ -1,26 +1,46 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "hash_tables.h"
+#include <stdio.h>
 
 /**
- * main - check the code
- *
- * Return: Always EXIT_SUCCESS.
+ * hash_table_print - Prints a hash table
+ * @ht: The hash table to print.
  */
-int main(void)
+void hash_table_print(const hash_table_t *ht)
 {
-    hash_table_t *ht;
+	unsigned long int i;
+	hash_node_t *node;
+	int printed = 0;
 
-    ht = hash_table_create(1024);
-    hash_table_print(ht);
-    hash_table_set(ht, "c", "fun");
-    hash_table_set(ht, "python", "awesome");
-    hash_table_set(ht, "Bob", "and Kris love asm");
-    hash_table_set(ht, "N", "queens");
-    hash_table_set(ht, "Asterix", "Obelix");
-    hash_table_set(ht, "Betty", "Cool");
-    hash_table_set(ht, "98", "Battery Street");
-    hash_table_print(ht);
-    return (EXIT_SUCCESS);
+	/*Check if the hash table is NULL*/
+	if (ht == NULL)
+		return;
+
+	/*Print the opening curly brace*/
+	printf("{");
+
+	/*Iterate through each array index*/
+	for (i = 0; i < ht->size; i++)
+	{
+		/*Get the linked list at the current index*/
+		node = ht->array[i];
+
+		/*Traverse the linked list*/
+		while (node != NULL)
+		{
+			/*check if a comma and space should be printed before key, value pair*/
+
+			if (printed)
+				printf(", ");
+			/*print the key_value pair*/
+			printf("'%s': '%s'", node->key, node->value);
+
+			/*set the flag to indicate that akey-value pair has been printed */
+			printed = 1;
+
+			/*move to the next->node*/
+			node = node->next;
+		}
+	}
+	/*print the closing curly braces and a newline character*/
+	printf("}\n");
 }
