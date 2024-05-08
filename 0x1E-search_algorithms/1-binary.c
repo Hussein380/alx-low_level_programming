@@ -26,12 +26,12 @@ int binary_search(int *array, size_t size, int value)
 	{
 		/*Print the current subarrya being searched*/
 		printf("searching in array: ");
-		for (i = left; i <= right; i++)
+		for (i = left; i < right; i++)
 			printf("%d, ", array[i]);
 		printf("%d\n", array[right]);
 
 		/*calculate the middle index*/
-		mid = (left + right) / 2;
+		mid = left + (right - left) / 2;
 
 		/*if middle is equal to the value return the index*/
 		if (array[mid] == value)
